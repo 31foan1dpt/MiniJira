@@ -12,7 +12,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BacklogComponent } from './components/backlog/backlog.component';
 import { StartpageComponent } from './components/startpage/startpage.component';
 import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,7 @@ import { MatIconModule } from '@angular/material/icon'
     MatButtonModule,
     MatListModule,
     MatIconModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
