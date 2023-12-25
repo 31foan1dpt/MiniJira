@@ -6,5 +6,5 @@ export interface Task {
    assignee: String; 
    creationDate: Date;
    dueDate: Date;
-   comments: string[;] 
+   comments: string[]; 
 }
