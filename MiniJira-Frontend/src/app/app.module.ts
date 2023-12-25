@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BacklogComponent } from './components/backlog/backlog.component';
 import { StartpageComponent } from './components/startpage/startpage.component';
-
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { StartpageComponent } from './components/startpage/startpage.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
