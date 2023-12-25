@@ -3,7 +3,7 @@
     <mat-card-title>Backlog</mat-card-title>
     <div>
       <button mat-icon-button>
-        <mat-icon>create</mat-icon>
+        <mat-icon>add</mat-icon>
       </button>
       <button mat-icon-button>
         <mat-icon>search</mat-icon>
@@ -12,11 +12,12 @@
   </mat-card-header>
   <mat-list>
     <mat-list-item *ngFor="let task of tasks" style="color: black; background-color: white; border-bottom: 1px solid #ccc;">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; justify-content: flex-start; align-items: center;">
         <span>{{task.id}} {{task.title}}</span>
-        <button mat-icon-button (click)="openDialog(task)" style="border-radius: 0; height: 24px; width: 24px; padding: 0;">
+        <button mat-icon-button (click)="openDialog(task)" style="border-radius: 0; height: 24px; width: 24px; padding: 0; margin-left: 10px;">
           <mat-icon style=" font-size: 18px; margin-left: 3px;">info</mat-icon>
         </button>
+        <div style="flex-grow: 1;"></div>
         <button mat-icon-button style="border-radius: 0; height: 24px; width: 24px; padding: 0;">
           <mat-icon style=" font-size: 18px; margin-left: 3px;">delete_forever</mat-icon>
         </button>
