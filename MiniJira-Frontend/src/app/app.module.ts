@@ -14,13 +14,16 @@ import { StartpageComponent } from './components/startpage/startpage.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { TaskDialogComponent } from './components/task-dialog/task-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     BacklogComponent,
-    StartpageComponent
+    StartpageComponent,
+    TaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { MatCardModule } from '@angular/material/card';
     MatListModule,
     MatIconModule,
     MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
