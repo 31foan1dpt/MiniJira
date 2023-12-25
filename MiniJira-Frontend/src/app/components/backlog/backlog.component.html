@@ -1,10 +1,15 @@
 <mat-list>
-    <mat-list-item 
-    *ngFor="let task of tasks"
-    style="color: black; background-color: white;">
-      {{task.title}}
-      <button mat-button (click)="deleteTask(task)">Delete</button>
+    <mat-list-item *ngFor="let task of tasks" style="color: black; background-color: white; border-bottom: 1px solid #ccc;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span>{{task.title}}</span>
+        <button mat-icon-button style="border-radius: 0; height: 24px; width: 24px; padding: 0;">
+          <mat-icon style=" font-size: 18px; margin-left: 3px;">delete_forever</mat-icon>
+        </button>
+      </div>
     </mat-list-item>
   </mat-list>
+  
+  
+  
   <button mat-button (click)="createTask()">Create Task</button>
   

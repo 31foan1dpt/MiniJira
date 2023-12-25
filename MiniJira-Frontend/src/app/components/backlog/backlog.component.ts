@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/models/task';
 import { DataService } from 'src/app/services/data.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-backlog',
