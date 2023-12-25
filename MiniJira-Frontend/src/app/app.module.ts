@@ -10,13 +10,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { BacklogComponent } from './components/backlog/backlog.component';
+import { StartpageComponent } from './components/startpage/startpage.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    BacklogComponent
+    BacklogComponent,
+    StartpageComponent
   ],
   imports: [
     BrowserModule,
