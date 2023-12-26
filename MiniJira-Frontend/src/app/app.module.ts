@@ -14,8 +14,12 @@ import { StartpageComponent } from './components/startpage/startpage.component';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { TaskDialogComponent } from './components/task-dialog/task-dialog.component';
+import { TaskDialogComponent } from './components/dialogs/task-dialog/task-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CreateTaskDialogComponent } from './components/dialogs/create-task-dialog/create-task-dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ToolbarComponent,
     BacklogComponent,
     StartpageComponent,
-    TaskDialogComponent
+    TaskDialogComponent,
+    CreateTaskDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     MatIconModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

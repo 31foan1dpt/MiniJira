@@ -3,7 +3,8 @@ import { Task } from 'src/app/models/task';
 import { DataService } from 'src/app/services/data.service';
 import { MatIconModule } from '@angular/material/icon';
 import {MatDialog} from '@angular/material/dialog';
-import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
+import { TaskDialogComponent } from '../dialogs/task-dialog/task-dialog.component';
+import { CreateTaskDialogComponent } from '../dialogs/create-task-dialog/create-task-dialog.component';
 
 @Component({
   selector: 'app-backlog',
@@ -13,8 +14,10 @@ import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 export class BacklogComponent {
   tasks: Task[] = [];
 
-  constructor(private dataservice: DataService, 
-    private dialog: MatDialog){}
+  constructor(
+    private dataservice: DataService, 
+    private dialog: MatDialog
+    ){}
 
   ngOnInit() {
     this.getAllTasks();
@@ -29,8 +32,14 @@ export class BacklogComponent {
   }
 
   createTask() {
-    // Code to create a new task
+    const dialogRef = this.dialog.open(CreateTaskDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log('Form data:', result); // This will log the form data to the console
+      // Call your DataService here to send the created task to your backend
+    });
   }
+  
 
   deleteTask(task: Task) {
     // Code to delete the task
