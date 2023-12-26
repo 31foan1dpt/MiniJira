@@ -15,7 +15,7 @@ export class BacklogComponent {
   tasks: Task[] = [];
 
   constructor(
-    private dataservice: DataService, 
+    private dataService: DataService, 
     private dialog: MatDialog
     ){}
 
@@ -24,7 +24,7 @@ export class BacklogComponent {
   }
 
   getAllTasks() {
-    this.dataservice.getAllTasks().subscribe((tasks: Task[]) =>{
+    this.dataService.getAllTasks().subscribe((tasks: Task[]) =>{
       this.tasks = tasks;
       console.log(this.tasks);
       
@@ -33,10 +33,14 @@ export class BacklogComponent {
 
   createTask() {
     const dialogRef = this.dialog.open(CreateTaskDialogComponent);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log('Form data:', result); // This will log the form data to the console
-      // Call your DataService here to send the created task to your backend
+    dialogRef.afterClosed().subscribe((task: Task) => {
+      if (task) {
+        console.log(task);
+         // Check if task is not null
+        this.dataService.createTask(task).subscribe(response => {
+          console.log('Task created:', response);
+        });
+      }
     });
   }
   

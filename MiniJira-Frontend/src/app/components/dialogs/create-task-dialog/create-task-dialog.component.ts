@@ -18,7 +18,13 @@ export class CreateTaskDialogComponent {
   ) {
     this.form = this.fb.group({
       id: '',
-      title: ''
+      title: '',
+      description: '',
+      status: '',
+      assignee: '',
+      creationDate: 'The Date Function will be implemented later',
+      dueDate: 'The Date Function will be implemented later',
+      comments: this.fb.array(['Comment function needs to be added', ' Prefiled Comments loaded...'])
     });
   }
 
