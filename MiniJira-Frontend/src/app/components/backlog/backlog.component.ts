@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatDialog} from '@angular/material/dialog';
 import { TaskDialogComponent } from '../dialogs/task-dialog/task-dialog.component';
 import { CreateTaskDialogComponent } from '../dialogs/create-task-dialog/create-task-dialog.component';
+import { BacklogInfoDialogComponent } from '../dialogs/backlog-info-dialog/backlog-info-dialog.component';
 
 @Component({
   selector: 'app-backlog',
@@ -58,6 +59,10 @@ export class BacklogComponent {
         task: task
       }
     });
+  }
+
+  openInfoDialog() {
+    const dialogRef = this.dialog.open(BacklogInfoDialogComponent);
   }
 
 }

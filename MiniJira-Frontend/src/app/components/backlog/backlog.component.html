@@ -2,6 +2,9 @@
   <mat-card-header style="display: flex; justify-content: space-between; align-items: center;">
     <mat-card-title>Backlog</mat-card-title>
     <div>
+      <button mat-icon-button (click)="openInfoDialog()">
+        <mat-icon>info</mat-icon>
+      </button>
       <button mat-icon-button (click)="createTask()">
         <mat-icon>add</mat-icon>
       </button>

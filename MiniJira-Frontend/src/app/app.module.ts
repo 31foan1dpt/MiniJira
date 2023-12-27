@@ -20,6 +20,7 @@ import { CreateTaskDialogComponent } from './components/dialogs/create-task-dial
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BacklogInfoDialogComponent } from './components/dialogs/backlog-info-dialog/backlog-info-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BacklogComponent,
     StartpageComponent,
     TaskDialogComponent,
-    CreateTaskDialogComponent
+    CreateTaskDialogComponent,
+    BacklogInfoDialogComponent
   ],
   imports: [
     BrowserModule,
