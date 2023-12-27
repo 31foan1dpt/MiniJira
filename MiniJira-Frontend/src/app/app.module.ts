@@ -24,6 +24,7 @@ import { BacklogInfoDialogComponent } from './components/dialogs/backlog-info-di
 import { SearchByIDDialogComponent } from './components/dialogs/search-by-iddialog/search-by-iddialog.component';
 import { FormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './components/dialogs/error-dialog/error-dialog.component';
+import { BoardComponent } from './components/board/board.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ErrorDialogComponent } from './components/dialogs/error-dialog/error-di
     CreateTaskDialogComponent,
     BacklogInfoDialogComponent,
     SearchByIDDialogComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
