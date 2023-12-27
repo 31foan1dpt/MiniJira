@@ -22,9 +22,9 @@ export class CreateTaskDialogComponent {
       description: '',
       status: '',
       assignee: '',
-      creationDate: 'The Date Function will be implemented later',
-      dueDate: 'The Date Function will be implemented later',
-      comments: this.fb.array(['Comment function needs to be added', ' Prefiled Comments loaded...'])
+      creationDate: '',
+      dueDate: '',
+      comments: this.fb.array(['Comment function needs to be added', 'Descriptionfunction needs to be adjusted', 'DatesFUnction eed to be added', ' Prefiled Comments loaded...'])
     });
   }
 
