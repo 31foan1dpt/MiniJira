@@ -35,15 +35,21 @@ export class BacklogComponent {
     const dialogRef = this.dialog.open(CreateTaskDialogComponent);
     dialogRef.afterClosed().subscribe((task: Task) => {
       if (task) {    
-        this.dataService.createTask(task).subscribe(response => {});
-        this.tasks.push(task)
+        this.dataService.createTask(task).subscribe(response => {
+          this.tasks.push(task)
+        });
       }
     });
   }
   
 
   deleteTask(task: Task) {
-    // Code to delete the task
+    this.dataService.deleteTask(task.id).subscribe(() => {
+      const index = this.tasks.indexOf(task);
+      if (index > -1) {
+        this.tasks.splice(index, 1);
+      }
+    });
   }
 
   openDialog(task: Task) {

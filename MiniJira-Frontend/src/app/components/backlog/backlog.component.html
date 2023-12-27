@@ -18,7 +18,7 @@
           <mat-icon style=" font-size: 18px; margin-left: 3px;">info</mat-icon>
         </button>
         <div style="flex-grow: 1;"></div>
-        <button mat-icon-button style="border-radius: 0; height: 24px; width: 24px; padding: 0;">
+        <button mat-icon-button (click)="deleteTask(task)" style="border-radius: 0; height: 24px; width: 24px; padding: 0;">
           <mat-icon style=" font-size: 18px; margin-left: 3px;">delete_forever</mat-icon>
         </button>
       </div>
