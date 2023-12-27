@@ -21,6 +21,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BacklogInfoDialogComponent } from './components/dialogs/backlog-info-dialog/backlog-info-dialog.component';
+import { SearchByIDDialogComponent } from './components/dialogs/search-by-iddialog/search-by-iddialog.component';
+import { FormsModule } from '@angular/forms';
+import { ErrorDialogComponent } from './components/dialogs/error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { BacklogInfoDialogComponent } from './components/dialogs/backlog-info-di
     StartpageComponent,
     TaskDialogComponent,
     CreateTaskDialogComponent,
-    BacklogInfoDialogComponent
+    BacklogInfoDialogComponent,
+    SearchByIDDialogComponent,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { BacklogInfoDialogComponent } from './components/dialogs/backlog-info-di
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,8 @@ import {MatDialog} from '@angular/material/dialog';
 import { TaskDialogComponent } from '../dialogs/task-dialog/task-dialog.component';
 import { CreateTaskDialogComponent } from '../dialogs/create-task-dialog/create-task-dialog.component';
 import { BacklogInfoDialogComponent } from '../dialogs/backlog-info-dialog/backlog-info-dialog.component';
+import { SearchByIDDialogComponent } from '../dialogs/search-by-iddialog/search-by-iddialog.component';
+import { ErrorDialogComponent } from '../dialogs/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-backlog',
@@ -64,5 +66,34 @@ export class BacklogComponent {
   openInfoDialog() {
     const dialogRef = this.dialog.open(BacklogInfoDialogComponent);
   }
+
+  searchTaskByID() {
+    const dialogRef = this.dialog.open(SearchByIDDialogComponent);
+  
+    dialogRef.afterClosed().subscribe(id => {
+      if (id) {
+        this.dataService.getTaskById(id).subscribe(
+          task => {
+            if (task) {
+              // If the task is found, open the TaskDialogComponent.
+              this.dialog.open(TaskDialogComponent, {
+                data: {task: task}
+              });
+            } else {
+              // If the task is not found (i.e., task is null), open the ErrorDialogComponent.
+              this.dialog.open(ErrorDialogComponent, {
+                data: { message: `Could not find the task with the ID: ${id}` }
+              });
+            }
+          },
+          error => {
+            // Handle other errors here.
+          }
+        );
+      }
+    });
+  }
+  
+  
 
 }

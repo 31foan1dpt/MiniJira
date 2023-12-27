@@ -1,0 +1,12 @@
+<!-- search-by-id-dialog.component.html -->
+<h1 mat-dialog-title>Search Task by ID</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input matInput [(ngModel)]="id">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="id" cdkFocusInitial>Search</button>
+</div>

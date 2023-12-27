@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { env } from '../../enviroments/enviroment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Task } from '../models/task';
 
 @Injectable({
@@ -19,7 +19,11 @@ export class DataService {
   }
 
   getTaskById(id: String): Observable<Task> {
-    return this.http.get<Task>(`${this.url}${this.mapping}/${id}`)
+    return this.http.get<Task>(`${this.url}${this.mapping}/${id}`).pipe(
+      catchError(error => {
+        return throwError(error);
+      })
+    );
   }
 
   createTask(task: Task): Observable<Task>{
