@@ -34,12 +34,9 @@ export class BacklogComponent {
   createTask() {
     const dialogRef = this.dialog.open(CreateTaskDialogComponent);
     dialogRef.afterClosed().subscribe((task: Task) => {
-      if (task) {
-        console.log(task);
-         // Check if task is not null
-        this.dataService.createTask(task).subscribe(response => {
-          console.log('Task created:', response);
-        });
+      if (task) {    
+        this.dataService.createTask(task).subscribe(response => {});
+        this.tasks.push(task)
       }
     });
   }
